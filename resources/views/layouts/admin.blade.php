@@ -66,18 +66,18 @@
         </li>
 
         <!-- Nav Item -->
-        <li class="nav-item {{ Nav::isRoute('grocery') }}">
-            <a class="nav-link" href="{{ route('grocery') }}">
+        <li class="nav-item {{ Nav::isRoute('client.name') }}">
+            <a class="nav-link" href="{{ route('client.name') }}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>{{ __('Users') }}</span>
+                <span>{{ __('Clients') }}</span>
             </a>
         </li>
 
         <!-- Nav Item -->
-        <li class="nav-item {{ Nav::isRoute('blank') }}">
-            <a class="nav-link" href="{{ route('blank') }}">
-                <i class="fas fa-fw fa-book"></i>
-                <span>{{ __('Blank Page') }}</span>
+        <li class="nav-item {{ Nav::isRoute('client.index') }}">
+            <a class="nav-link" href="{{ route('client.index') }}">
+                <i class="fas fa-fw fa-file"></i>
+                <span>{{ __('Jobs') }}</span>
             </a>
         </li>
 
