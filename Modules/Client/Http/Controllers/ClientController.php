@@ -77,7 +77,7 @@ class ClientController extends Controller
         ]);
         $crud->setActionButton('Files', 'fa fa-file', function ($row) {
             return route('client.files', $row->id);
-        });
+        }, true);
         $crud->where(['finished'=>'0']);
 
         $output = $crud->render();
