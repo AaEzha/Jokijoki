@@ -65,7 +65,7 @@ class ClientController extends Controller
 
         $crud->setTable('clients');
         $crud->setSubject('Client Job', 'Client Jobs');
-        $crud->unsetColumns(['created_at', 'updated_at']);
+        $crud->columns(['client_name_id', 'job', 'deal_date', 'deadline_date', 'fee', 'dp', 'paid']);
         $crud->unsetFields(['created_at', 'updated_at']);
         $crud->setTexteditor(['note']);
         $crud->setSkin('bootstrap-v4');
@@ -73,7 +73,9 @@ class ClientController extends Controller
         $crud->fieldType('finished', 'checkbox_boolean');
         $crud->setRelation('client_name_id', 'client_names', 'name');
         $crud->displayAs([
-            'client_name_id' => 'Client Name'
+            'client_name_id' => 'Client Name',
+            'paid' => 'Paid',
+            'dp' => 'DP'
         ]);
         $crud->callbackColumn('dp', function ($value, $row) {
             return "Rp " . number_format($value, 0, ',', '.');
