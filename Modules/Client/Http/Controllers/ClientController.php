@@ -75,6 +75,12 @@ class ClientController extends Controller
         $crud->displayAs([
             'client_name_id' => 'Client Name'
         ]);
+        $crud->callbackColumn('dp', function ($value, $row) {
+            return "Rp " . number_format($value, 0, ',', '.');
+        });
+        $crud->callbackColumn('fee', function ($value, $row) {
+            return "Rp " . number_format($value, 0, ',', '.');
+        });
         $crud->setActionButton('Files', 'fa fa-file', function ($row) {
             return route('client.files', $row->id);
         }, true);
